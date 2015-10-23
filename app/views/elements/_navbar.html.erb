@@ -1,0 +1,33 @@
+
+<div class="contain-to-grid sticky" style="-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.58);
+-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.58);
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.58);">
+  <nav class="top-bar" data-options="sticky_on: [medium,large]" data-topbar role="navigation">
+    <ul class="title-area">
+       
+      <li class="name">
+        <h1>
+        <a href="/"><img src="/assets/logo1.png" style="width: 230px; height: 45px !important;"></a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+ 
+    <section class="top-bar-section">
+       
+      <ul class="right">
+        
+        
+        <li class="divider"></li>      
+        <li><%= link_to "Ver Catálogo", products_path %></li>
+        <li class="divider"></li>
+        <li><%= link_to "Sobre Nosotros", pages_quienes_path %></li>
+        <li class="divider"></li>      
+        <li><%= link_to "Contacto", pages_contactenos_path %></li>
+        <li class="divider"></li>
+       <%= render partial: "products/search" %>      
+
+      </ul>
+    </section>
+  </nav>
+</div>

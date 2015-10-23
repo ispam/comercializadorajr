@@ -1,0 +1,195 @@
+
+<% if params[:q]%>
+<br>
+<div class="row" style="background-color:white !important;">
+<br>
+  <h1 class="text-center">Resultados de Busqueda</h1>
+  <hr>
+  <% @products.each do |product| %>
+    
+      <div class="medium-3 columns">
+          <h4 class="subheader text-center">
+            <a href="#" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
+          </h4>
+          <br>
+
+      <% if product.file %>
+        <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
+      <% end %>
+      
+      <div id="product-<%= product.id %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <div class="large-12">
+            <h2 id="modalTitle"><%= product.name %></h2>
+            </div>
+
+                <br>
+                <div class="medium-4 columns">
+                <br>
+                <% if product.file %>
+                  <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
+                <% end %>
+                </div>
+                
+                <div class="medium-4 columns">
+                <% if product.details %>
+                  <h4 class="subheader">Detalles</h4>
+                 <%= product.details %>
+                <% end %>
+                
+                <h4 class="subheader">Empresa</h4>
+               <% product.companies.each do |x| %>
+                      <%= x.industry %>
+                      <% end %><br>
+                
+                <h4 class="subheader">Marca </h4>
+                  <% product.brands.each do |y| %>
+                   <%= y.marks %> <br>
+                  <% end %>  
+                </div>
+                <div class="medium-4 columns">
+                <h4 class="subheader">Categorías</h4>
+                <% product.lines.each do |f| %>
+                    <%= f.category%> <br>
+                  <% end %> 
+                
+                <h4 class="subheader">Establecimientos</h4>
+                <p>
+                  <% product.places.each do |g| %>
+                    <%= g.establishment %> <br>
+                  <% end %>
+                </p>
+                </div>
+
+
+            <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+          </div>
+    </div>
+    
+  <% end %>
+</div>
+  <% else %>
+  <br>
+  <div class=" medium-12 small-12 columns" style="background-color:white !important;">
+
+    <br>
+
+  <h1 class="text-center">Catálogo</h1>  
+    <br>
+      <div class="panel callout radius">
+      <h4 class="text-center">Aquí puede buscar su producto de interés, de acuerdo a estos <strong>3 posibles filtros </strong>de búsqueda.</h4>
+      </div>
+
+      <br>
+
+      <hr>
+        <div class="small-12 large-centered columns show-for-large-only">
+          <ul class="tabs text-center" data-tab role="tablist">
+            <li class="tab-title active"><a href="#panel2-1" style="width: 300px; border-bottom-style: outset; border-radius: 40px;">Tipo de Clientes</a></li>
+            <li class="tab-title"><a href="#panel2-2" style="width: 300px; border-bottom-style: outset;border-radius: 40px;margin-left:10px;">Línea de Producto</a></li>
+
+            <li class="tab-title"><a href="#panel2-3" style="width: 300px; border-bottom-style: outset;border-radius: 40px;margin-left:10px;">Marcas</a></li>
+          </ul>
+        </div>
+
+          <div class="tabs-content show-for-large-only">
+            <section class="content active" id="panel2-1">
+              <div class="row  end">
+                <% @places.sort.each_slice(3) do |slice| %>
+                  <% slice.each do |place| %>
+                    <div class="large-3 medium-3 small-12 columns end">
+                      <%= link_to "#{place.establishment}", place_path(place), class: "button info round text-center", style: "width: 200px;" %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </section>
+            <section class="content" id="panel2-2">
+              <div class="row  end">
+                <% @lines.sort.each_slice(3) do |slice| %>
+                  <% slice.each do |line| %>
+                    <div class="large-3 medium-3 small-12 columns end">
+                      <%= link_to "#{line.category}", line_path(line), class: "button info round text-center", style: "width: 200px;" %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </section>
+            <section class="content" id="panel2-3">
+              <div class="row  end">
+                <% @brands.sort.each_slice(20) do |slice| %>
+                  <% slice.each do |brand| %>
+                    <div class="large-3 medium-3 small-12 columns end">
+                      <%= link_to "#{brand.marks}", brand_path(brand), class: "button info round text-center", style: "width: 200px;" %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </section>
+        </div>
+
+        <ul class="accordion show-for-small-up hide-for-large-up" data-accordion>
+          <li class="accordion-navigation">
+            <a href="#panel2a" style="border-radius: 40px; border-style: outset" class="text-center">Tipo de Clientes</a>
+            <div id="panel2a" class="content active">
+              <ul class="accordion" data-accordion="myAccordionGroup">
+                  <div class="row  end">
+                    <% @places.sort.each_slice(3) do |slice| %>
+                      <% slice.each do |place| %>
+                        <div class="large-3 medium-4 small-12 columns end text-center">
+                          <%= link_to "#{place.establishment}", place_path(place), class: "button info round text-center", style: "width: 200px;" %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+              </ul>
+            </div>
+          </li>
+          <li class="accordion-navigation">
+            <a href="#panel3a" style="border-radius: 40px; border-style: outset" class="text-center">Línea de Producto</a>
+            <div id="panel3a" class="content">
+              <ul class="accordion" data-accordion="myAccordionGroup">
+                  <div class="row  end">
+                    <% @lines.sort.each_slice(3) do |slice| %>
+                      <% slice.each do |line| %>
+                        <div class="large-3 medium-4 small-12 columns end">
+                          <%= link_to "#{line.category}", line_path(line), class: "button info round text-center", style: "width: 200px;" %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+              </ul>
+            </div>
+          </li>
+           <li class="accordion-navigation">
+            <a href="#panel4a" style="border-radius: 40px; border-style: outset" class="text-center">Marcas</a>
+            <div id="panel4a" class="content">
+              <ul class="accordion" data-accordion="myAccordionGroup">
+                  <div class="row  end">
+                    <% @brands.sort.each_slice(20) do |slice| %>
+                      <% slice.each do |brand| %>
+                        <div class="large-3 medium-4 small-12 columns end">
+                          <%= link_to "#{brand.marks}", brand_path(brand), class: "button info round text-center", style: "width: 200px;" %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  </div>
+  <% end %>
+
+       
+<script>
+  $('#myAccordionGroup').on('toggled', function (event, accordion) {
+    console.log(accordion);
+  });
+</script>

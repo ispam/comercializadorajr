@@ -1,2 +1,45 @@
-<h1>Pages#inicio</h1>
-<p>Find me in app/views/pages/inicio.html.erb</p>
+<br>
+<div class="row" style="background-color:white !important;">
+  <br>
+     <div class="large-12 columns">
+      <ul class="example-orbit" data-orbit data-options="pause_on_hover:false; timer_speed:7000;">
+        <li>
+          <img src="/assets/Bienvenida.jpg" alt="slide 1">
+          
+        </li>
+        <li class="active">
+          <img src="/assets/Nuestras Marcas.jpg" alt="slide 2">
+          
+        </li>
+        <li>
+        <img src="/assets/Nuestros Aliados.jpg" alt="slide 3">
+        
+      </li>
+  </div>
+  <hr>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+   
+     
+        <div class="large-8 medium-8 columns">
+          <img src="/assets/mapa.jpg">
+        </div>
+        
+        <div class="medium-4 large-4 columns text-center">
+  <br>
+          <h2 class="subheader">Productos en Oferta</h2>
+          
+           <div id="orbitSlider2">
+              <ul class="example-orbit" data-orbit data-options="pause_on_hover:false; timer_speed:2500;">
+                 <% @products.shuffle.each do |product| %>
+                  <li>
+                  <% if product.offer %>
+                    <%= image_tag attachment_url(product, :file, :fill, 300, 250) %>
+                  <% end %>
+                  </li>
+                <% end %>
+              </ul>
+          </div>
+        </div> 
+ 
+</div>

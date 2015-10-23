@@ -1,0 +1,12 @@
+<li style="background: #094D63 !important; width: 200px;">
+
+	  <%= search_form_for @q do |f| %>
+	      <div class="large-7 medium-7 columns" style="padding-right:0px;">
+	         <%= f.search_field :name_cont, required: true, placeholder: "Busque" %>
+	      </div>
+	      <div class="large-5 medium-5 columns" style="padding-left:0px;">
+	        <%= f.submit "Buscar", class: "button expand", style: "background-color:#A0D3E8 !important;"%>
+	      </div>
+	  <% end %>
+
+</li>

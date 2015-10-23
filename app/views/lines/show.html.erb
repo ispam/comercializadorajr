@@ -1,0 +1,79 @@
+<br>
+<div class="row" style="background-color:white !important;">
+	<div class="medium-12 columns">
+		<p id="notice"><%= notice %></p>
+
+  		<h2 class="text-center">Linea de Producto: <strong><%= @line.category %> </strong></h2>
+  		<hr>
+  		<br>
+  		<p>Aquí encuentras <strong>TODOS</strong> los productos disponibles en <strong><%= @line.category %></strong>.</p>
+  		<br>
+		
+		<% @line.products.each do |product| %>
+  		<div class="large-3 medium-3 small-3 columns end panel">
+			  	<h4 class="subheader text-center">
+			  		<a href="" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
+		  		</h4>
+			  	<br>
+
+			<% if product.file %>
+				<%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
+			<% end %>
+			
+			<div id="product-<%= product.id %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+
+      
+			      <div class="large-12 medium-12 small-12 columns">
+				      <h2 id="modalTitle"><%= product.name %></h2>
+			      </div>
+
+			          <br>
+			          <div class="medium-4 columns">
+			          <br>
+			          <%= image_tag attachment_url(@product, :file, :fill, 300, 300) %>
+			          </div>
+			          
+			          <div class="medium-4 columns">
+			          <% if product.details %>
+			            <h4 class="subheader">Detalles</h4>
+			           <%= product.details %>
+			          <% end %>
+			          
+			          <h4 class="subheader">Empresa</h4>
+				        <% product.companies.each do |x| %>
+			                <%= x.industry %> <br>
+		                <% end %>
+			          
+			          <h4 class="subheader">Marca </h4>
+			            <% product.brands.each do |y| %>
+			             <%= y.marks %> <br>
+			            <% end %>  
+			          </div>
+			          <div class="medium-4 columns">
+			          <h4 class="subheader">Categorías</h4>
+			          <% product.lines.each do |f| %>
+			              <%= f.category%> <br>
+			            <% end %> 
+			          
+			          <h4 class="subheader">Establecimientos</h4>
+			          
+			            <% product.places.each do |g| %>
+			              <%= g.establishment %> <br>
+			            <% end %>
+			          </div>
+
+
+			      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+			    </div>
+
+
+			
+		</div>
+		
+	<% end %>
+	</div>
+
+<div class="medium-12 columns">
+<%= link_to 'Volver al Catálogo', products_path, class: "button round info"  %>
+</div>
+</div>
