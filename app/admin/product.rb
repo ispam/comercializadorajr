@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
 
 permit_params :company, :marks, :category, :establishment, :name, :details, :file, :industry, :offer,
-	line_ids: [], place_ids: [], brand_ids: [], company_ids: [], sale_ids: [] 
+	line_ids: [], place_ids: [], brand_ids: [], company_ids: [], album_ids: [], product_ids: []
 	
 
    form html: { multipart: true } do |f|

@@ -5,9 +5,10 @@
 <br>
   <h1 class="text-center">Resultados de Busqueda</h1>
   <hr>
+<%= paginate @products %>
   <% @products.each do |product| %>
     
-      <div class="medium-3 columns">
+      <div class="medium-3 columns end">
           <h4 class="subheader text-center">
             <a href="#" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
           </h4>
@@ -25,7 +26,16 @@
                 <br>
                 <div class="medium-4 columns">
                 <br>
-                <% if product.file %>
+                <% if product.albums %>
+                <ul data-orbit data-options="pause_on_hover:false; timer_speed:2500;" >               
+                   <% product.albums.shuffle.each do |album| %>
+                      <li>
+                        <%= image_tag attachment_url(album, :file, :fill, 300, 300) %>
+                      </li>
+                    <% end %>
+                </ul>
+                
+                <% else  %>
                   <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
                 <% end %>
                 </div>

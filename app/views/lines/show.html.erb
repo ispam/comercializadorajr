@@ -16,9 +16,9 @@
 		  		</h4>
 			  	<br>
 
-			<% if product.file %>
-				<%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
-			<% end %>
+			 <% if product.file %>
+			   <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
+			 <% end %>
 			
 			<div id="product-<%= product.id %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 
@@ -30,7 +30,18 @@
 			          <br>
 			          <div class="medium-4 columns">
 			          <br>
-			          <%= image_tag attachment_url(@product, :file, :fill, 300, 300) %>
+			          <% if product.albums %>
+		                <ul data-orbit data-options="pause_on_hover:false; timer_speed:2500;" >               
+		                   <% product.albums.shuffle.each do |album| %>
+		                      <li>
+		                        <%= image_tag attachment_url(album, :file, :fill, 300, 300) %>
+		                      </li>
+		                    <% end %>
+		                </ul>
+		                
+		                <% else  %>
+		                  <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
+		                <% end %>
 			          </div>
 			          
 			          <div class="medium-4 columns">

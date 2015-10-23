@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
 	
 	def set_search
 		@q = Product.search(params[:q])
-		@products = @q.result(distinct: true)
+		@products = @q.result(distinct: true).page params[:page]
 	end
 	
 	def show

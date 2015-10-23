@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+gem 'kaminari'
+gem 'will_paginate', '~> 3.0.6'
 gem 'ransack'	
 gem "refile", require: "refile/rails", github: "refile/refile"
 gem "refile-mini_magick"

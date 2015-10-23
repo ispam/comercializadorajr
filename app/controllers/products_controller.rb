@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 	before_filter :set_search, only: [:index]
 		def set_search
 			@q = Product.search(params[:q])
-			@products = @q.result(distinct: true)
+			@products = @q.result(distinct: true).page params[:page]
 		end
 
 	def index

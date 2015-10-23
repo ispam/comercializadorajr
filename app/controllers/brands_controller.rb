@@ -2,8 +2,8 @@ class BrandsController < ApplicationController
 	before_filter :set_search, only: [:show]
 		def set_search
 			@q = Product.search(params[:q])
-			@products = @q.result(distinct: true)
-		end
+			@products = @q.result(distinct: true).page params[:page]
+    end
   def show
   	@brand = Brand.find(params[:id])
   end
