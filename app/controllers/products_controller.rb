@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 		@places = Place.all
 		@lines = Line.all
 		@brands = Brand.all
+		@albums = Album.all
 	end
 
 	private
