@@ -160,7 +160,7 @@ $topbar-hue: #2C757B;
 // $small-breakpoint:  em-calc(640);
 // $medium-breakpoint: em-calc(1024);
 // $large-breakpoint:  em-calc(1440);
-// $xlarge-breakpoint: em-calc(1920);
+$xlarge-breakpoint: em-calc(1915);
 
 // $small-range:   (0, $small-breakpoint);
 // $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
@@ -1439,7 +1439,7 @@ $topbar-link-bg-hover: scale-color($topbar-bg, $lightness: -44%);
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: $hardblue;
+$topbar-dropdown-bg:  scale-color($topbar-bg, $lightness: -24%);
 // $topbar-dropdown-link-color: $white;
 $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 $topbar-dropdown-link-bg: $greenie;
@@ -1461,7 +1461,7 @@ $topbar-dropdown-link-bg-hover: scale-color($topbar-bg, $lightness: -44%);
 // $topbar-menu-link-weight: $font-weight-bold;
 // $topbar-menu-link-color: $white;
 // $topbar-menu-icon-color: $white;
-// $topbar-menu-link-color-toggled: $jumbo;
+// $topbar-menu-link-color-toggled: $greenie;
 // $topbar-menu-icon-color-toggled: $jumbo;
 // $topbar-menu-icon-position: $opposite-direction; // Change to $default-float for a left menu icon
 
