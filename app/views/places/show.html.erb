@@ -43,32 +43,31 @@
 			          
 			          <div class="medium-4 columns">
 			          <% if product.details %>
-			            <h4 class="subheader">Detalles</h4>
-			            <p><%= product.details %></p>
+			            <h4 class="subheader">Descripción</h4>
+			            <%= product.details %>
 			          <% end %>
 			          
 			          <h4 class="subheader">Empresa</h4>
-			          <% product.companies.each do |x| %>
-		                <%= x.industry %><br>
-		              <% end %>
+						<% product.companies.each do |x| %>
+			                <%= x.industry %><br>
+		                <% end %>
 			          
 			          <h4 class="subheader">Marca </h4>
 			            <% product.brands.each do |y| %>
-			              <%= y.marks %><br>
+			             <%= y.marks %><br>
 			            <% end %>  
 			          </div>
 			          <div class="medium-4 columns">
-			          <h4 class="subheader">Categorías</h4>
-			           <p><% product.lines.each do |f| %>
+			          <h4 class="subheader">Línea de Producto</h4>
+			          <% product.lines.each do |f| %>
 			              <%= f.category%> <br>
-			            <% end %></p> 
+			            <% end %> 
 			          
-			          <h4 class="subheader">Establecimientos</h4>
-			          <p>
+			          <h4 class="subheader">Clientes Habituales</h4>
+			         
 			            <% product.places.each do |g| %>
 			              <%= g.establishment %> <br>
 			            <% end %>
-			          </p>
 			          </div>
 
 

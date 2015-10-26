@@ -42,7 +42,7 @@
 			          
 			          <div class="medium-4 columns">
 			          <% if product.details %>
-			            <h4 class="subheader">Detalles</h4>
+			            <h4 class="subheader">Descripción</h4>
 			            <%= product.details %>
 			          <% end %>
 			          
@@ -57,12 +57,12 @@
 			            <% end %>  
 			          </div>
 			          <div class="medium-4 columns">
-			          <h4 class="subheader">Categorías</h4>
+			          <h4 class="subheader">Línea de Producto</h4>
 			          <% product.lines.each do |f| %>
 			              <%= f.category%> <br>
 			            <% end %> 
 			          
-			          <h4 class="subheader">Establecimientos</h4>
+			          <h4 class="subheader">Clientes Habituales</h4>
 			         
 			            <% product.places.each do |g| %>
 			              <%= g.establishment %> <br>

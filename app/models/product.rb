@@ -5,4 +5,6 @@ class Product < ActiveRecord::Base
  	has_and_belongs_to_many :brands
  	has_and_belongs_to_many :albums
  	attachment :file
+
+ 	paginates_per 40
 end
