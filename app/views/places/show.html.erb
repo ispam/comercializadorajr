@@ -16,7 +16,7 @@
 		  		</h4>
 
 			  	<% if product.file %>
-			  	  <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left; padding-top:0px;"  %>
+			  	  <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left;"  %>
 			  	<% end %>
 			
 			<div id="product-<%= product.id %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">

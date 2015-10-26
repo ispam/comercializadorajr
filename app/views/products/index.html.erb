@@ -8,19 +8,20 @@
 <%= paginate @products %>
   <% @products.each do |product| %>
     
-      <div class="medium-3 columns panel end" style="height: 325px !important">
-          <h4 class="subheader text-center" style="height:70px !important;">
-            <a href="#" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
+      <div class="large-3 medium-3 small-6 columns panel end" style="height: 325px !important">
+          <h4 class="subheader text-center" style="height:70px !important">
+            <a href="" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
           </h4>
-          <br>
 
-      <% if product.file %>
-        <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
-      <% end %>
+       <% if product.file %>
+         <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
+       <% end %>
       
       <div id="product-<%= product.id %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-            <div class="large-12">
-            <h2 id="modalTitle"><%= product.name %></h2>
+
+      
+            <div class="large-12 medium-12 small-12 columns">
+              <h2 id="modalTitle"><%= product.name %></h2>
             </div>
 
                 <br>
@@ -29,12 +30,12 @@
                 <% if product.albums.empty?  %>
                         <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
                       <% else %>
-                          <ul data-orbit data-options="pause_on_hover:false; timer_speed:2500;" >               
-                             <% product.albums.shuffle.each do |album| %>
-                                <li><%= image_tag attachment_url(album, :file, :fill, 300, 300) %></li>
-                              <% end %>
-                          </ul>
-                      <% end %>
+                         <ul data-orbit data-options="pause_on_hover:false; timer_speed:2500;" >               
+                            <% product.albums.shuffle.each do |album| %>
+                               <li><%= image_tag attachment_url(album, :file, :fill, 300, 300) %></li>
+                             <% end %>
+                         </ul>
+                    <% end %>
                 </div>
                 
                 <div class="medium-4 columns">
@@ -44,7 +45,7 @@
                 <% end %>
                 
                 <h4 class="subheader">Empresa</h4>
-                <% product.companies.each do |x| %>
+            <% product.companies.each do |x| %>
                       <%= x.industry %><br>
                     <% end %>
                 
@@ -69,6 +70,9 @@
 
             <a class="close-reveal-modal" aria-label="Close">&#215;</a>
           </div>
+
+
+      
     </div>
     
   <% end %>
