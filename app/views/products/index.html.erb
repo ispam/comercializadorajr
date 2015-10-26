@@ -8,8 +8,8 @@
 <%= paginate @products %>
   <% @products.each do |product| %>
     
-      <div class="medium-3 columns panel end">
-          <h4 class="subheader text-center">
+      <div class="medium-3 columns panel end" style="height: 325px !important">
+          <h4 class="subheader text-center" style="height:70px !important;">
             <a href="#" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
           </h4>
           <br>
