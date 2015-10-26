@@ -18,15 +18,6 @@ permit_params :company, :marks, :category, :establishment, :name, :details, :fil
       f.actions
   end
 
-  show do
-      attributes_table do
-        row :name
-        row :file do
-          image_tag attachment_url(product, :file)
-        end
-      end
-
-    end
 
 	index do 
 	  column "Titulo", :name
@@ -40,6 +31,20 @@ permit_params :company, :marks, :category, :establishment, :name, :details, :fil
   actions name: "Acciones"
     
   end
+
+  controller do
+      def create
+        super do |format|
+          redirect_to collection_url and return if resource.valid?
+        end
+      end
+
+      def update
+        super do |format|
+          redirect_to collection_url and return if resource.valid?
+        end
+      end
+    end
 
   
   menu label: "Productos"
