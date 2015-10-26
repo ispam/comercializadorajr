@@ -18,6 +18,16 @@ permit_params :company, :marks, :category, :establishment, :name, :details, :fil
       f.actions
   end
 
+  show do
+      attributes_table do
+        row :name
+        row :file do
+          image_tag attachment_url(product, :file)
+        end
+      end
+
+    end
+
 	index do 
 	  column "Titulo", :name
 	  column "Creada", :created_at

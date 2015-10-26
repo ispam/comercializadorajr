@@ -10,8 +10,8 @@
   		<br>
 		
 		<% @place.products.each do |product| %>
-  		<div class="large-3 medium-3 small-6 columns end panel">
-			  	<h4 class="subheader text-center">
+  		<div class="large-3 medium-3 small-6 columns end" style="height: 355px !important">
+			  	<h4 class="text-center" style="height:100px !important">
 			  		<a href="" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
 		  		</h4>
 			  	<br>
@@ -30,7 +30,7 @@
 			          <div class="medium-4 columns">
 			          <br>
 				        <% if product.albums.empty?  %>
-		                    <%= image_tag attachment_url(product, :file, :fill, 300, 300), :style => "float:left"  %>
+		                    <%= image_tag attachment_url(product, :file), :style => "float:left"  %>
 	                    <% else %>
                           <ul data-orbit data-options="pause_on_hover:false; timer_speed:2500;" >               
                              <% product.albums.shuffle.each do |album| %>
