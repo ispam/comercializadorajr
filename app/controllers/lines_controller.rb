@@ -5,7 +5,7 @@ class LinesController < ApplicationController
 			@products = @q.result(distinct: true).page params[:page]
     end
   def show
-  	@lines = Line.find(params[:id])
+  	@line = Line.find(params[:id])
   end
   private
 

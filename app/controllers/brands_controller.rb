@@ -5,7 +5,7 @@ class BrandsController < ApplicationController
 			@products = @q.result(distinct: true).page params[:page]
     end
   def show
-  	@brands = Brand.find(params[:id])
+  	@brand = Brand.find(params[:id])
   end
   private
 

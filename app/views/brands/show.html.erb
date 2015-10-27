@@ -2,13 +2,13 @@
 	<div class="medium-12 columns">
 		<p id="notice"><%= notice %></p>
 
-  		<h2 class="text-center">Marca: <strong><%= @brands.marks %> </strong></h2>
+  		<h2 class="text-center">Marca: <strong><%= @brand.marks %> </strong></h2>
   		<hr>
   		<br>
-  		<p>Aquí encuentras <strong>TODOS</strong> los productos disponibles en <strong><%= @brands.marks %></strong>.</p>
+  		<p>Aquí encuentras <strong>TODOS</strong> los productos disponibles en <strong><%= @brand.marks %></strong>.</p>
   		<br>
 		
-		<% @brands.products.each do |product| %>
+		<% @brand.products.each do |product| %>
   		<div class="large-3 medium-3 small-6 columns panel end" style="height: 325px !important">
 			  	<h4 class="subheader text-center" style="height:70px !important;">
 			  		<a href="" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
@@ -84,6 +84,6 @@
 		<%= link_to 'Volver al Catálogo', products_path, class: "button round secondary"  %>
 	</div>
 
-	<%= paginate @brands %>
+	<%= paginate @brand %>
 
 </div>

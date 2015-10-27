@@ -3,13 +3,13 @@
 	<div class="medium-12 columns">
 		<p id="notice"><%= notice %></p>
 
-  		<h2 class="text-center">Linea de Producto: <strong><%= @lines.category %> </strong></h2>
+  		<h2 class="text-center">Linea de Producto: <strong><%= @line.category %> </strong></h2>
   		<hr>
   		<br>
-  		<p>Aquí encuentras <strong>TODOS</strong> los productos disponibles en <strong><%= @lines.category %></strong>.</p>
+  		<p>Aquí encuentras <strong>TODOS</strong> los productos disponibles en <strong><%= @line.category %></strong>.</p>
   		<br>
 		
-		<% @lines.products.each do |product| %>
+		<% @line.products.each do |product| %>
   		<div class="large-3 medium-3 small-6 columns panel end" style="height: 325px !important">
 			  	<h4 class="subheader text-center" style="height:70px !important">
 			  		<a href="" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
@@ -84,5 +84,5 @@
 		<%= link_to 'Volver al Catálogo', products_path, class: "button round info"  %>
 	</div>
 
-	<%= paginate @lines %>
+	<%= paginate @line %>
 </div>
