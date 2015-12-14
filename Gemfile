@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem "jquery-slick-rails"
 gem "figaro"
 gem 'kaminari'

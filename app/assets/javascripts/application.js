@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery.slick
 //= require jquery
 //= require jquery_ujs
+//= require jquery.slick
 //= require foundation
 //= require turbolinks
 //= require_tree .
