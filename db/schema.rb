@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151023033314) do
+ActiveRecord::Schema.define(version: 20151214151150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,8 +84,12 @@ ActiveRecord::Schema.define(version: 20151023033314) do
 
   create_table "lines", force: :cascade do |t|
     t.string   "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_id"
+    t.string   "image_filename"
+    t.integer  "image_size"
+    t.string   "image_content_type"
   end
 
   create_table "lines_products", id: false, force: :cascade do |t|
@@ -95,8 +99,12 @@ ActiveRecord::Schema.define(version: 20151023033314) do
 
   create_table "places", force: :cascade do |t|
     t.string   "establishment"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_id"
+    t.string   "image_filename"
+    t.integer  "image_size"
+    t.string   "image_content_type"
   end
 
   create_table "places_products", id: false, force: :cascade do |t|

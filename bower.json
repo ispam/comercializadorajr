@@ -1,0 +1,21 @@
+{
+  "name": ".json",
+  "homepage": "https://github.com/ispam/comercializadorajr",
+  "authors": [
+    "Diego Fernando Urrea <diegoug@gmail.com>"
+  ],
+  "description": "carousel",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slick-carousel": "~1.5.9"
+  }
+}

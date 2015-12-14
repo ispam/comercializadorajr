@@ -10,30 +10,68 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css"/>
   </head>
 
   <body>
   
   <%= render partial: "elements/navbar" %>
         
-        <div class="row">
+        <!-- <div class="row"> -->
         <%= yield %>
-        </div>
-    <br>
-    <br>
-   <div id="footer" style="background:#094D63 !important; -webkit-box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.58);
+        <!-- </div> -->
+   <div id="footer" style="background:#132D2E !important; -webkit-box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.58);
 -moz-box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.58);
 box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.58);">
-        <div class="row text-center" style="color:white;font-family: Arial, Helvetica, sans-serif;">
+        <div class="row text-center" style="color:#D4D9D9 !important;font-family: Arial, Helvetica, sans-serif;">
           <br>
-            <div class="small-8 columns">
-              <p><font size="2">©<%= Time.now.year %> <strong>Comercializadora J.R </strong>- Manizales. TODOS LOS DERECHOS RESERVADOS.</font></p>
+            <div class="large-4 medium-4 small-12 columns">
+            <br>
+              <h3 style="text-decoration:underline; color:#D4D9D9 !important"><strong>Nuestra Presencia</strong></h3>
+              <div class="row text-justify" id="circles">
+                <div class="large-6 medium-6 small-6 columns">
+                  <li>Caldas</li>
+                  <li>Risaralda</li>
+                  <li>Quindío</li>
+                  <li>Valle del Cauca</li>
+                </div>
+                <div class="large-6 medium-6 small-6 columns">
+                  <li>Chocó</li>
+                  <li>Antioquia</li>
+                  <li>Cundinamarca</li>
+                  <li>Tolima</li>
+                </div>
+
+                <div class="small-12 columns text-center" style="margin-top:10px;">
+                  <p>Diseñado por:<a href="http://www.destinum.tech" target="_blank"><img src="/assets/destinum.png"></a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="large-4 medium-4 small-12 columns">
+              <br>
+              <img src="/assets/logo6.png" style="width: 240px; height: 50px !important;">
+              <br>
+              <br>
+              <a href="http://www.destinum.tech" target="_blank"><img src="/assets/fb.png" style="width: 50px;"></a>
+              <a href="http://www.destinum.tech" target="_blank"><img src="/assets/tw.png" style="width: 50px;"></a>
+              <a href="http://www.destinum.tech" target="_blank"><img src="/assets/youtube.png" style="width: 57px;"></a>
             </div>
             
-            <div class="small-4 columns push-right">
-              <p><font size="2">| <strong>PBX:</strong>+57(6) 886-6109 / <strong> Celular:</strong> 315-542-1986</font></p>
+            <div class="large-4 medium-4 small-12 columns">
+            <br>
+              <h3 style="text-decoration:underline; color:#D4D9D9 !important"><strong>Contacto</strong></h3>
+              PBX:+57(6)886-6109
+              <br>
+              Dirección
+              servicioalcliente@comercializadorajr.com
             </div>
           <br>
+          <div class="large-12 medium-12 small-12 columns">
+            <p style="color:#9BA289 !important"><font size="2"><%= Time.now.year %> ©<strong>Comercializadora J.R </strong>- Manizales. TODOS LOS DERECHOS RESERVADOS.</font></p>
+          </div>
         </div>
       </div> 
 
@@ -63,6 +101,7 @@ box-shadow: 0px -2px 5px 0px rgba(0,0,0,0.58);">
              }
            }
         </script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
     
   </body>
 </html>

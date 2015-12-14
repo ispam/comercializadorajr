@@ -11,8 +11,8 @@
 		
 		<% @place.products.each do |product| %>
   		<div class="large-3 medium-3 small-6 columns panel end" style="height: 325px !important">
-			  	<h4 class="text-center" style="height:70px !important">
-			  		<a href="" data-reveal-id="product-<%= product.id %>"><%= product.name %></a>
+			  	<h4 class="text-center">
+			  		<a href="" data-reveal-id="product-<%= product.id %>" style="font-size:18px;"><%= product.name %></a>
 		  		</h4>
 
 			  	<% if product.file %>

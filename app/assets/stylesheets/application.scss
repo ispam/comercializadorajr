@@ -15,8 +15,19 @@
 
  */
 body {
-	background-image: image-url("Fondo.png") !important;
+	font-family: "open-sans";
 }
+@import 'slick';
 .orbit-container {
     min-height: 280px;
 }
+
+.imgg{
+	width: 150px;
+	display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+

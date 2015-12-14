@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "jquery-slick-rails"
 gem "figaro"
 gem 'kaminari'
 gem 'ransack'	

@@ -7,7 +7,7 @@ permit_params :company, :marks, :category, :establishment, :name, :details, :fil
    form html: { multipart: true } do |f|
     f.inputs "Edición de Producto" do
         f.input :name
-        f.input :offer, as: :boolean, collection: Product.pluck(:offer, :id)
+        # f.input :offer, as: :boolean, collection: Product.pluck(:offer, :id)
         f.input :file, required: true, as: :file
         f.input :details
         f.input :lines, as: :check_boxes, collection: Line.pluck(:category, :id)

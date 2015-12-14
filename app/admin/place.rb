@@ -3,6 +3,14 @@ ActiveAdmin.register Place do
 permit_params :company, :marks, :category, :establishment, :name, :details, :image, :industry, :offer,
 	line_ids: [], place_ids: [], brand_ids: [], company_ids: []
 
+     form html: { multipart: true } do |f|
+      f.inputs "Edición" do
+          # f.input :image, required: true, as: :image
+          f.input :establishment
+        end
+        f.actions
+    end
+
 	menu label: "Tipo de Clientes"
 	 controller do
       def create
